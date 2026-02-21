@@ -5,6 +5,7 @@ from django.db import models
 class Estudiante(models.Model):
     nombre=models.CharField(max_length=100)
     apellido=models.CharField(max_length=100)
+    direccion= models.TextField()#Otro tipo de texto
     email =models.EmailField()
     
     def __str__(self):
@@ -28,7 +29,7 @@ class Curso(models.Model):
 
 class Entregable (models.Model):
     nombre=models.CharField(max_length=100)
-    fech_entrega=models.DateField()
+    fech_entrega=models.DateField(auto_now_add=True) #opcion para fecha actual
     entregado=models.BooleanField()
     
     def __str__(self):
