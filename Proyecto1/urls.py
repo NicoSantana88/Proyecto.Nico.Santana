@@ -20,5 +20,6 @@ from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),#si dejo vacio el primer dato, ese llamado lo va a tomar como pagina principal
-    path("", views.index, name="index.Prueba") #el nombre que se le pone a la solicitud es opcional
+    path("", views.index, name="index.Prueba"), #el nombre que se le pone a la solicitud es opcional
+    path("Saludo", views.saludar, name = "Es un Saludo usando resp"),
 ]
