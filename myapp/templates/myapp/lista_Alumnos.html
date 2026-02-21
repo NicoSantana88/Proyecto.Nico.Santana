@@ -8,8 +8,8 @@
 <body>
     <h1>Alumnos Registrados: </h1>
     <ul>
-        {% for alumno in Estudiante %}
-            <li>{{ alumno.nombre }} - {{ alumno.apellido }} - {{ alumno.dirrecion }}</li>
+        {% for alumno in estudiantes_list %}
+            <li>{{ alumno.nombre }} - {{ alumno.apellido }} - {{ alumno.direccion }}</li>
         {% endfor %}
 
     </ul>
