@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from myapp import views_intro
+from alumnos_app import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),#si dejo vacio el primer dato, ese llamado lo va a tomar como pagina principal
-    path("", views.index, name="index.Prueba"), #el nombre que se le pone a la solicitud es opcional
-    path("Saludo", views.saludar, name = "Es un Saludo usando resp"),
+    path("inicio", views_intro.index, name="index.Prueba"), #el nombre que se le pone a la solicitud es opcional
+    path("Saludo", views_intro.saludar, name = "Es un Saludo usando resp"),
     path("Lista_Alumnos", views.estudiantes_list),
 ]
