@@ -7,5 +7,8 @@ def index(request):
     context={"mensaje" : "Bienvenidos al sito"}
     return render (request, "myapp/index.html", context) 
 
-def saludar (request):
-    return HttpResponse("Respuesta")#al no aclarar que va a myapp/index.html al correr http://127.0.0.1:8000/saludo me muestra solo el mensaje
+def saludar (request, nombre: str, apellido: str):
+    nombre= nombre.capitalize()
+    apellido= apellido.capitalize()
+    
+    return HttpResponse(f"Respuesta para {nombre} con el apellido {apellido}")#al no aclarar que va a myapp/index.html al correr http://127.0.0.1:8000/saludo me muestra solo el mensaje
