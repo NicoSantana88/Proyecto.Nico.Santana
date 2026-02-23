@@ -8,7 +8,11 @@ from .forms import PostForm
 
 def estudiantes_list(request):
     '''La Clave que paso en contex es la que se va a usar en el html'''
-    estudiantes_list= Estudiante.objects.all()
+    busqueda= request.GET.get("busqueda", None)#Nuevo
+    if busqueda:
+        estudiantes_list= Estudiante.objects.filter(apellido__icontains=busqueda)
+    else:
+        estudiantes_list= Estudiante.objects.all()
     return render(request, "alumnos_app/lista_Alumnos.html", context={"estudiantes_list": estudiantes_list})
 
 
