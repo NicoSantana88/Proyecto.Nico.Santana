@@ -7,7 +7,7 @@ from django.shortcuts import render
 def indexPrueba(request):
     '''en render, request siempre va, la ubicacion a donde va a ir y el tercer dato es el context, un diccionario '''
     context={"mensaje2" : "Bienvenidos al sito"}
-    return render (request, "myapp/base.html", context) 
+    return render (request, "myapp/index.html", context) 
 
 #def saludar (request, nombre: str, apellido: str):
  #   nombre= nombre.capitalize()

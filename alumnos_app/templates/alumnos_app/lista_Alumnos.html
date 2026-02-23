@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Alumnos</title>
-</head>
-<body>
-    <h1>Alumnos Registrados: </h1>
+{% extends 'myapp/base.html' %}
+
+{% block title %}Lista de Alumnos{% endblock title %}
+
+{% block content_title %}
+    Alumnos Registrados:
+{% endblock content_title %}
+{% block content %}
+            
     <ul>
         {% for alumno in estudiantes_list %}
             <li>{{ alumno.nombre }} - {{ alumno.apellido }} - {{ alumno.direccion }}</li>
         {% endfor %}
 
     </ul>
+{% endblock content %}
 
-</body>
-</html>

@@ -19,6 +19,7 @@ class Migration(migrations.Migration):
                 ('apellido', models.CharField(max_length=100)),
                 ('direccion', models.TextField()),
                 ('email', models.EmailField(max_length=254)),
+
             ],
         ),
     ]

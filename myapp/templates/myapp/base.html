@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INICIO</title>
+    <title>Web - {% block title %}{% endblock title %}</title>
+
    <href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> <style> .navbar-custom { background: linear-gradient(135deg, #0d6efd, #6610f2); } .navbar-custom a { color: #fff; font-weight: 500; text-decoration: none; } .navbar-custom a:hover { color: #ffc107; } </style> 
 </head>
 <body>
@@ -17,6 +18,9 @@
               <div class="collapse navbar-collapse" id="menu"> 
                 <ul class="navbar-nav ms-auto text-center"> 
                     <li class="nav-item"> 
+                        <a href="{% url 'myapp:Inicio' %}" class="nav-link px-3">INICIO</a> 
+                    </li> 
+                    <li class="nav-item"> 
                         <a href="{% url 'alumnos_app:estudiantes' %}" class="nav-link px-3">Alumnos</a> 
                     </li> 
                     <li class="nav-item"> 
@@ -26,8 +30,19 @@
              </div>
              </div> 
 </nav>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">
+            {% block content_title %}
+                
+            {% endblock content_title %}
+
+        </h1>
+
+        {% block content %}
     
-<u>{{mensaje2}}</u>
+        {% endblock content %}
+    </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
