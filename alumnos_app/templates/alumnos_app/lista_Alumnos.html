@@ -6,7 +6,7 @@
     Alumnos Registrados:
 {% endblock content_title %}
 {% block content %}
-            
+    <a href="{% url 'alumnos_app:new_alumno' %}" class="btn btn-primary mb-3">Crear alumno</a>        
     <ul>
         {% for alumno in estudiantes_list %}
             <li>{{ alumno.nombre }} - {{ alumno.apellido }} - {{ alumno.direccion }}</li>

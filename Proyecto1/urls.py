@@ -19,6 +19,7 @@ from django.urls import path, include
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),#si dejo vacio el primer dato, ese llamado lo va a tomar como pagina principal
     path("", include("myapp.urls")), #el nombre que se le pone a la solicitud es opcional

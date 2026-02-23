@@ -5,4 +5,5 @@ app_name="alumnos_app"
 
 urlpatterns = [
     path("Alumnos", views.estudiantes_list, name="estudiantes"),
+    path("Post/Alumnos",views.post_create, name="new_alumno")
 ]
