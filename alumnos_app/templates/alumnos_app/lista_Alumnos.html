@@ -10,12 +10,30 @@
     <form action="{% url 'alumnos_app:estudiantes' %}" method="get">
         <input type="text" name="busqueda" placeholder="Buscar..." type="submit" class="form-control mb-3">
     </form>
+<div class="d-flex justify-content-center mt-4">
+    <table class="table table-bordered border-primary table-striped text-center w-75">
+        <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alumno in estudiantes_list %}
+                    <tr>
+                        <td>{{ alumno.nombre }} </td>
+                        <td>{{ alumno.apellido }}</td>
+                        <td>{{ alumno.direccion }}</td>
+                        <td>{{alumno.email}}</td>
+                    </tr>
+              
+                {% endfor %}
 
-    <ul>
-        {% for alumno in estudiantes_list %}
-            <li>{{ alumno.nombre }} - {{ alumno.apellido }} - {{ alumno.direccion }}</li>
-        {% endfor %}
-
-    </ul>
+            </tbody>
+   
+        </table>
+    </div>
 {% endblock content %}
 
