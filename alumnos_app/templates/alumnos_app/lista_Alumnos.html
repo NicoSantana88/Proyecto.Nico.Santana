@@ -6,12 +6,17 @@
     Alumnos Registrados:
 {% endblock content_title %}
 {% block content %}
+
     <a href="{% url 'alumnos_app:new_alumno' %}" class="btn btn-primary mb-3">Crear alumno</a>        
     <form action="{% url 'alumnos_app:estudiantes' %}" method="get">
         <input type="text" name="busqueda" placeholder="Buscar..." type="submit" class="form-control mb-3">
     </form>
+{% endblock content %}
+{% block tabla %}
+    
+
 <div class="d-flex justify-content-center mt-4">
-    <table class="table table-bordered border-primary table-striped text-center w-75">
+    <table class="table table-bordered">
         <thead class="table-dark">
                 <tr>
                     <th>Nombre</th>
@@ -35,5 +40,5 @@
    
         </table>
     </div>
-{% endblock content %}
+{% endblock tabla %}
 

@@ -3,6 +3,7 @@ from profesores_app import views
 
 app_name="profesores_app"
 urlpatterns = [
-    path("Profesores", views.profesor_list, name="Profesores"),
+    path("Lista_Profesor/", views.profesor_list, name="Profesores"),
+    path("new/profesor",views.post_profesor, name="Profesor_Nuevo")
 ]
 

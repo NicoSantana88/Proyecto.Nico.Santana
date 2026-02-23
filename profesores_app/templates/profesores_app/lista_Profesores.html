@@ -1,11 +1,43 @@
 {% extends 'myapp/base.html' %}
 
-{% block title %}Profesores{% endblock title %}
+{% block title %}Lista de Profesores{% endblock title %}
 
 {% block content_title %}
-    Lista de Profesores
+    Profesores Registrados:
 {% endblock content_title %}
 {% block content %}
-            
 
+    <a href="{% url 'profesores_app:Profesor_Nuevo' %}" class="btn btn-primary mb-3">Crear alumno</a>        
+    <form action="{% url 'profesores_app:Profesores' %}" method="get">
+        <input type="text" name="busqueda" placeholder="Buscar..." type="submit" class="form-control mb-3">
+    </form>
 {% endblock content %}
+{% block tabla %}
+    
+
+<div class="d-flex justify-content-center mt-4">
+    <table class="table table-bordered">
+        <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Materia</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for profe in profesor_list %}
+                    <tr>
+                        <td>{{ profe.nombre }} </td>
+                        <td>{{ profe.apellido }}</td>
+                        <td>{{ profe.email }}</td>
+                        <td>{{profe.profesion}}</td>
+                    </tr>
+              
+                {% endfor %}
+
+            </tbody>
+   
+        </table>
+    </div>
+{% endblock tabla %}
