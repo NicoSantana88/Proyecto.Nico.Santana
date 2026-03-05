@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from .models import Profesor
 # Create your views here.
-
+from .forms import PostForm
 
 
 

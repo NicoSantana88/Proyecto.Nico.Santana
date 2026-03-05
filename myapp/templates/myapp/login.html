@@ -1,0 +1,18 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}INICIAR SESIÓN{% endblock title %}
+
+{% block content_title %}
+   Login
+{% endblock content_title %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_p}}
+        </table>
+        <button type="submit"> Iniciar Sesión</button>
+    </form>     
+    <p>¿No tienes una cuanta? <a href="">Crear Usuario</a></p>       
+
+{% endblock content %}

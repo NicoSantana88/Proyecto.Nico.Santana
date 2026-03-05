@@ -20,12 +20,40 @@
                     <li class="nav-item"> 
                         <a href="{% url 'myapp:Inicio' %}" class="nav-link px-3">INICIO</a> 
                     </li> 
-                    <li class="nav-item"> 
-                        <a href="{% url 'alumnos_app:estudiantes' %}" class="nav-link px-3">Alumnos</a> 
-                    </li> 
-                    <li class="nav-item"> 
-                        <a href="{% url 'profesores_app:Profesores' %}" class="nav-link px-3">Profesores</a> 
-                    </li> 
+
+                    {% if user.is_authenticated %}
+                        <li class="nav-item"> 
+                            <a href="{% url 'alumnos_app:estudiantes' %}" class="nav-link px-3">Alumnos</a> 
+                        </li> 
+                        <li class="nav-item"> 
+                            <a href="{% url 'profesores_app:Profesores' %}" class="nav-link px-3">Profesores</a> 
+                        </li> 
+            
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'myapp:perfil' %}"> {{ user.username }}</a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url '' %}"> Cerrar Sesión</a>
+
+                        </li>
+                    {% else %} 
+                        <li class="nav-item"> 
+                            <a href="{% url 'myapp:login' %}" class="nav-link px-3">Alumnos </a> 
+                        </li> 
+                        <li class="nav-item"> 
+                            <a href="{% url 'myapp:login' %}" class="nav-link px-3">Profesores</a> 
+                        </li> 
+                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'myapp:login' %}"> TIENE QUE INICIAR SESIÓN</a>
+
+                        </li>
+                        
+
+
+                    {% endif %}
                 </ul>
              </div>
              </div> 

@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}USUARIO {{  user.username }} {% endblock title %}
+
+{% block content_title %}
+    Datos del Usuario: 
+{% endblock content_title %}
+{% block content %}
+    <p> Nombre:{{ user.first_name }}</p>
+    <p>Apellido: {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>    
+    <a href="{% url 'myapp:editar_perfil' %}">Editar {{user.username}}</a>
+
+{% endblock content %}

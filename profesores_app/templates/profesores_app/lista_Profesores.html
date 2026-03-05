@@ -7,7 +7,7 @@
 {% endblock content_title %}
 {% block content %}
 
-    <a href="{% url 'profesores_app:Profesor_Nuevo' %}" class="btn btn-primary mb-3">Crear alumno</a>        
+    <a href="{% url 'profesores_app:Profesor_Nuevo' %}" class="btn btn-primary mb-3">Crear Profesor</a>        
     <form action="{% url 'profesores_app:Profesores' %}" method="get">
         <input type="text" name="busqueda" placeholder="Buscar..." type="submit" class="form-control mb-3">
     </form>
