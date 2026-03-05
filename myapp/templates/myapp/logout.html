@@ -1,0 +1,13 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Cerrar Sesión de {{ user.username }}{% endblock title %}
+
+{% block content_title %}
+   Logout
+{% endblock content_title %}
+{% block content %}
+    <p>Sesión Cerrada</p>
+    <p>Saludos!!</p>
+
+    <button><a href="{% url 'myapp:Inicio' %}">OK</a></button>
+{% endblock content %}

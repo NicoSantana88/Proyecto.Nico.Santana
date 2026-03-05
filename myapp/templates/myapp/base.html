@@ -33,11 +33,13 @@
                             <a class="nav-link" href="{% url 'myapp:perfil' %}"> {{ user.username }}</a>
 
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url '' %}"> Cerrar Sesión</a>
-
-                        </li>
+                        <p> </p>
+                        <form action="{% url 'myapp:logout' %}" method="post">
+                            {% csrf_token %}
+                            <li class="nav-item">
+                                <button type="submit">Cerrar Sesión</button>
+                            </li>
+                        </form>
                     {% else %} 
                         <li class="nav-item"> 
                             <a href="{% url 'myapp:login' %}" class="nav-link px-3">Alumnos </a> 
