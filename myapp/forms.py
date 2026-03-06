@@ -1,6 +1,7 @@
 from django import forms
-from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.contrib.auth.models import User
+
 
 class EditUserForm(UserChangeForm):
     email= forms.EmailField(required=True, label="Email")
@@ -9,5 +10,10 @@ class EditUserForm(UserChangeForm):
     
     class Meta:
         model=User
-        fields=("email","first_name", "last_name", "password" )
+        fields=("username","email","first_name", "last_name", "password" )
 
+
+class MiRegistro (UserCreationForm):
+    class Meta:
+        model=User
+        fields=("username","email","first_name", "last_name", "password1" , "password2" )

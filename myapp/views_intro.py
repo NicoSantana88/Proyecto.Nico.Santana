@@ -3,7 +3,9 @@ from django.shortcuts import render, redirect
 #from .models import Estudiante
 # Create your views here. maneja las logicas
 from django.contrib.auth.decorators import login_required
-from .forms import EditUserForm
+from .forms import EditUserForm, MiRegistro
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
 def logeo(request):
     
@@ -33,6 +35,11 @@ def editar_perfil(request):
         else:
             form= EditUserForm( instance= request.user)
     return render(request, "myapp/editar_perfil.html", {"form":form})
-            
         
+            
+class Register(CreateView):
+    form_class= MiRegistro
+    template_name="myapp/register.html"
+    success_url= reverse_lazy("myapp:login")
+    
 

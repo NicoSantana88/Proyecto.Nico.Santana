@@ -8,7 +8,12 @@
 {% block content %}
     <p> Nombre:{{ user.first_name }}</p>
     <p>Apellido: {{user.last_name}}</p>
-    <p>Email: {{user.email}}</p>    
-    <a href="{% url 'myapp:editar_perfil' %}">Editar {{user.username}}</a>
+    <p>Email: {{user.email}}</p> 
+    <form action="{% url 'myapp:editar_perfil' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">EDITAR USUARIO</button>
+
+    </form>   
+ 
 
 {% endblock content %}

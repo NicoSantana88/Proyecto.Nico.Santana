@@ -10,4 +10,6 @@ urlpatterns = [
     path("editar_perfil", views_intro.editar_perfil, name="editar_perfil"),
     path("login/", LoginView.as_view(template_name="myapp/login.html"), name="login"),
     path("logout/",LogoutView.as_view(template_name="myapp/logout.html"), name="logout"),
+    path("register/",views_intro.Register.as_view(), name="register" ),
+    
 ]
